@@ -15,13 +15,15 @@
                 src="{{ auth()->user()->avatar }}"
                 alt="your avatar"
                 class="rounded-full mr-2"
+                width="50"
+                height="50"
             >
 
             <button
                 type="submit"
-                class="bg-blue-500 rounded-lg shadow py-2 px-2 text-white"
+                class="bg-blue-500 rounded-lg shadow px-8 text-white h-12"
             >
-                Tweet-a-roo!
+                Publish
             </button>
         </footer>
     </form>
