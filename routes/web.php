@@ -20,8 +20,10 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/tweets', 'TweetsController@index')->name('home');
     Route::post('/tweets', 'TweetsController@store');
+
+    Route::post('/profiles/{user:name}/follow', 'FollowsController@store');
 });
 
-Route::get('/profiles/{user}', 'ProfilesController@show')->name('profile');
+Route::get('/profiles/{user:name}', 'ProfilesController@show')->name('profile');
 
 Auth::routes();
