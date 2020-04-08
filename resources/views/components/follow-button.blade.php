@@ -1,6 +1,6 @@
 @unless (current_user()->is($user))
     <form method="POST"
-          action="/profiles/{{ $user->name }}/follow"
+          action="{{ route('follow', $user->username) }}"
     >
         @csrf
 

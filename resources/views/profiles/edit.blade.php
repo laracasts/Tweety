@@ -55,7 +55,7 @@
                        type="file"
                        name="avatar"
                        id="avatar"
-                       required
+                       accept="image/*"
                 >
 
                 <img src="{{ $user->avatar }}"

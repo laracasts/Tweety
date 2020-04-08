@@ -21,14 +21,22 @@ Route::middleware('auth')->group(function () {
     Route::get('/tweets', 'TweetsController@index')->name('home');
     Route::post('/tweets', 'TweetsController@store');
 
-    Route::post('/profiles/{user:username}/follow', 'FollowsController@store');
+    Route::post(
+        '/profiles/{user:username}/follow',
+        'FollowsController@store'
+    )->name('follow');
+
     Route::get(
         '/profiles/{user:username}/edit',
         'ProfilesController@edit'
     )->middleware('can:edit,user');
 
-    // Next episode, we'll add the necessary authorization middleware.
-    Route::patch('/profiles/{user:username}', 'ProfilesController@update');
+    Route::patch(
+        '/profiles/{user:username}',
+        'ProfilesController@update'
+    )->middleware('can:edit,user');
+
+    Route::get('/explore', 'ExploreController@index');
 });
 
 Route::get('/profiles/{user:username}', 'ProfilesController@show')->name(
