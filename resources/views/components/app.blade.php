@@ -10,9 +10,11 @@
                     {{ $slot }}
                 </div>
 
-                <div class="lg:w-1/6">
-                    @include ('_friends-list')
-                </div>
+                @auth
+                    <div class="lg:w-1/6">
+                        @include ('_friends-list')
+                    </div>
+                @endauth
             </div>
         </main>
     </section>
