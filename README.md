@@ -12,3 +12,4 @@ This is the repository for the "Laravel From Scratch" [final project](https://la
 6. When writing a new tweet, display the number of remaining characters they're allowed.
 7. Allow tweets to be deleted.
 8. Add support for mentions and notifications.
+9. Work on responsiveness.
